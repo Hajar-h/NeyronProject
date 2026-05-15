@@ -36,6 +36,7 @@
             <a href="#about">About</a>
             <a href="#how-it-works">How It Works</a>
             <a href="#features">Features</a>
+            <a href="#app-showcase">App</a>
             <a href="#contact">Contact</a>
         </nav>
     </header>
@@ -63,25 +64,30 @@
         </div>
     </section>
 <section id="problem" class="section-animate">
+        <div class="problem-bg" aria-hidden="true"></div>
         <h2 class="reveal">The Problem</h2>
-        <div class="problem-content">
-            
+        <p class="problem-lead reveal reveal-delay-1">Communication barriers leave many children unheard—and families searching for answers.</p>
+
+        <div class="problem-layout">
             <div class="problem-stat reveal reveal-left reveal-delay-1">
                 <h3>30%</h3>
-                <p>Of autistic children develop functional spoken language </p>
+                <p>Of autistic children develop functional spoken language</p>
             </div>
-
-            <div class="problem-details reveal reveal-right reveal-delay-2">
-                <ul>
-                    <li class="reveal reveal-delay-3">Difficulty expressing needs and emotions </li>
-                    <li class="reveal reveal-delay-4">Increased frustration and behavioral challenges </li>
-                    <li class="reveal reveal-delay-5">Social isolation and reduced independence </li>
-                </ul>
-                <div class="highlight-text reveal reveal-delay-5">
-                    <p>Traditional Augmentative and Alternative Communication (AAC) systems are not effective for every child.</p>
+            <div class="problem-content-wrap">
+                <div class="problem-visual reveal reveal-scale reveal-delay-2">
+                    <img src="media/autism%20block.png" alt="Colorful blocks spelling AUTISM" class="problem-blocks-img">
+                </div>
+                <div class="problem-details reveal reveal-right reveal-delay-2">
+                    <ul class="problem-list">
+                        <li class="reveal reveal-delay-3">Difficulty expressing needs and emotions</li>
+                        <li class="reveal reveal-delay-4">Increased frustration and behavioral challenges</li>
+                        <li class="reveal reveal-delay-5">Social isolation and reduced independence</li>
+                    </ul>
+                    <div class="highlight-text reveal reveal-delay-5">
+                        <p>Traditional Augmentative and Alternative Communication (AAC) systems are not effective for every child.</p>
+                    </div>
                 </div>
             </div>
-
         </div>
     </section>
     <section id="about" class="section-animate">
@@ -181,7 +187,43 @@
         </div>
     </section>
 
+    <section id="app-showcase" class="section-animate">
+        <div class="app-showcase-bg" aria-hidden="true"></div>
+        <h2 class="reveal">Inside the NEYRON App</h2>
+        <p class="showcase-intro reveal reveal-delay-1">An ASD-centered design crafted for children with Autism Spectrum Disorder and their caregivers.</p>
 
+        <div class="phone-carousel reveal reveal-delay-2" id="phone-carousel">
+            <div class="phone-stack-shadow" aria-hidden="true"></div>
+            <div class="phone-carousel-stage" id="phone-carousel-stage">
+                <article class="phone-slide" data-index="0">
+                    <div class="app-screen">
+                        <img src="media/homescreen.png" alt="NEYRON Main Dashboard" draggable="false">
+                    </div>
+                </article>
+                <article class="phone-slide" data-index="1">
+                    <div class="app-screen">
+                        <img src="media/arabicpecs.png" alt="Arabic PECS Library" draggable="false">
+                    </div>
+                </article>
+                <article class="phone-slide" data-index="2">
+                    <div class="app-screen">
+                        <img src="media/history.png" alt="Command History Timeline" draggable="false">
+                    </div>
+                </article>
+            </div>
+            <div class="phone-caption-wrap">
+                <p class="phone-caption is-active" data-index="0">Intuitive User Dashboard</p>
+                <p class="phone-caption" data-index="1">Arabic PECS Library</p>
+                <p class="phone-caption" data-index="2">Real-Time Command History</p>
+            </div>
+            <div class="carousel-dots" role="tablist" aria-label="App screens">
+                <button type="button" class="carousel-dot is-active" data-index="0" aria-label="Dashboard" aria-selected="true"></button>
+                <button type="button" class="carousel-dot" data-index="1" aria-label="Arabic PECS" aria-selected="false"></button>
+                <button type="button" class="carousel-dot" data-index="2" aria-label="History" aria-selected="false"></button>
+            </div>
+            <p class="carousel-hint">← Drag or swipe to browse app screens →</p>
+        </div>
+    </section>
 
     <section id="contact" class="section-animate" style="padding-bottom: 0;">
         <footer>
@@ -253,6 +295,96 @@
         document.querySelectorAll('.hero .reveal').forEach((el) => {
             requestAnimationFrame(() => el.classList.add('is-visible'));
         });
+
+        (function initPhoneCarousel() {
+            const carousel = document.getElementById('phone-carousel');
+            const stage = document.getElementById('phone-carousel-stage');
+            if (!carousel || !stage) return;
+
+            const slides = Array.from(stage.querySelectorAll('.phone-slide'));
+            const captions = Array.from(carousel.querySelectorAll('.phone-caption'));
+            const dots = Array.from(carousel.querySelectorAll('.carousel-dot'));
+            const total = slides.length;
+            let current = 0;
+            let startX = 0;
+            let dragging = false;
+
+            function setDragOffset(px) {
+                slides.forEach((slide) => slide.style.setProperty('--drag-x', px + 'px'));
+            }
+
+            function setSlide(index) {
+                current = (index + total) % total;
+                slides.forEach((slide, i) => {
+                    const offset = (i - current + total) % total;
+                    slide.classList.remove('is-active', 'is-prev', 'is-next');
+                    slide.style.setProperty('--drag-x', '0px');
+                    if (offset === 0) slide.classList.add('is-active');
+                    else if (offset === 1) slide.classList.add('is-next');
+                    else slide.classList.add('is-prev');
+                });
+                captions.forEach((cap, i) => cap.classList.toggle('is-active', i === current));
+                dots.forEach((dot, i) => {
+                    dot.classList.toggle('is-active', i === current);
+                    dot.setAttribute('aria-selected', i === current ? 'true' : 'false');
+                });
+            }
+
+            function goNext() { setSlide(current + 1); }
+            function goPrev() { setSlide(current - 1); }
+
+            setSlide(0);
+
+            dots.forEach((dot) => {
+                dot.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    setSlide(Number(dot.dataset.index));
+                });
+            });
+
+            slides.forEach((slide) => {
+                slide.addEventListener('click', () => {
+                    if (slide.classList.contains('is-prev')) goPrev();
+                    else if (slide.classList.contains('is-next')) goNext();
+                });
+            });
+
+            function onStart(clientX) {
+                dragging = true;
+                startX = clientX;
+            }
+
+            function onMove(clientX) {
+                if (!dragging) return;
+                setDragOffset(clientX - startX);
+            }
+
+            function onEnd(clientX) {
+                if (!dragging) return;
+                dragging = false;
+                const delta = clientX - startX;
+                setDragOffset(0);
+                if (delta < -40) goNext();
+                else if (delta > 40) goPrev();
+            }
+
+            carousel.addEventListener('mousedown', (e) => {
+                if (e.button !== 0) return;
+                e.preventDefault();
+                onStart(e.clientX);
+            });
+            window.addEventListener('mousemove', (e) => onMove(e.clientX));
+            window.addEventListener('mouseup', (e) => onEnd(e.clientX));
+
+            carousel.addEventListener('touchstart', (e) => onStart(e.touches[0].clientX), { passive: true });
+            carousel.addEventListener('touchmove', (e) => {
+                if (!dragging) return;
+                onMove(e.touches[0].clientX);
+            }, { passive: true });
+            carousel.addEventListener('touchend', (e) => {
+                if (e.changedTouches[0]) onEnd(e.changedTouches[0].clientX);
+            });
+        })();
     </script>
 
 </body>
