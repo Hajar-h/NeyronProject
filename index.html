@@ -8,6 +8,9 @@
     <link rel="icon" href="media/neyron-favicon-white.png" type="image/png" sizes="32x32">
     <link rel="apple-touch-icon" href="media/neyron-favicon-white.png">
     <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+Bhaijaan+2:wght@400..800&display=swap" rel="stylesheet">
     <style>
         :root {
             --primary-blue: #1A2B6D; /* Based on typical tech/medical themes */
@@ -22,22 +25,27 @@
 <body>
 
     <header>
-        <div class="logo">
-            <img src="media/neyron-logo-white.png" alt="NEYRON Logo">
+        <div class="brand-area">
+            <div class="logo">
+                <img src="media/neyron-logo-white.png" alt="NEYRON Logo">
+            </div>
+            <div class="header-controls">
+                <button id="lang-toggle" class="lang-switcher" type="button" aria-label="Switch language to Arabic" data-i18n-aria-label="switchLanguage">العربية</button>
+                <button class="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="main-nav">
+                    <span class="nav-toggle-bar"></span>
+                    <span class="nav-toggle-bar"></span>
+                    <span class="nav-toggle-bar"></span>
+                </button>
+            </div>
         </div>
-        <button class="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="main-nav">
-            <span class="nav-toggle-bar"></span>
-            <span class="nav-toggle-bar"></span>
-            <span class="nav-toggle-bar"></span>
-        </button>
         <nav id="main-nav" class="main-nav">
-            <a href="#home">Home</a>
-            <a href="#problem">The Problem</a>
-            <a href="#about">About</a>
-            <a href="#how-it-works">How It Works</a>
-            <a href="#features">Features</a>
-            <a href="#app-showcase">App</a>
-            <a href="#contact">Contact</a>
+            <a href="#home" data-i18n="navHome">Home</a>
+            <a href="#problem" data-i18n="navProblem">The Problem</a>
+            <a href="#about" data-i18n="navAbout">About</a>
+            <a href="#how-it-works" data-i18n="navHowItWorks">How It Works</a>
+            <a href="#features" data-i18n="navFeatures">Features</a>
+            <a href="#app-showcase" data-i18n="navApp">App</a>
+            <a href="#contact" data-i18n="navContact">Contact</a>
         </nav>
     </header>
 
@@ -49,64 +57,64 @@
         </div>
         <div class="hero-inner">
             <div class="hero-content">
-                <span class="hero-badge reveal reveal-delay-1">Brain-Computer Interface</span>
-                <h1 class="reveal reveal-delay-2"><span class="hero-title-accent">NEY</span>RON</h1>
-                <p class="hero-tagline reveal reveal-delay-3">Intelligent Autism Communication Aid via Brain-Computer Interface (BCI)</p>
+                <span class="hero-badge reveal reveal-delay-1" data-i18n="heroBadge">Brain-Computer Interface</span>
+                <h1 class="reveal reveal-delay-2"><span class="hero-title-accent" data-i18n="heroTitleAccent">NEY</span><span data-i18n="heroTitleRest">RON</span></h1>
+                <p class="hero-tagline reveal reveal-delay-3" data-i18n="heroTagline">Intelligent Autism Communication Aid via Brain-Computer Interface (BCI)</p>
                 <div class="hero-actions reveal reveal-delay-4">
-                    <a href="#how-it-works" class="btn btn-primary">See How It Works</a>
-                    <a href="#contact" class="btn btn-outline">Get in Touch</a>
+                    <a href="#how-it-works" class="btn btn-primary" data-i18n="btnHowItWorks">See How It Works</a>
+                    <a href="#contact" class="btn btn-outline" data-i18n="btnGetInTouch">Get in Touch</a>
                 </div>
             </div>
             <div class="hero-visual reveal reveal-scale reveal-delay-2">
                 <div class="hero-visual-ring" aria-hidden="true"></div>
-                <img src="media/neyron-characters.png" alt="Neyron Characters" class="hero-characters">
+                <img src="media/neyron-characters.png" alt="Neyron Characters" data-i18n-alt="altNeyronCharacters" class="hero-characters">
             </div>
         </div>
     </section>
 <section id="problem" class="section-animate">
         <div class="problem-bg" aria-hidden="true"></div>
-        <h2 class="reveal">The Problem</h2>
-        <p class="problem-lead reveal reveal-delay-1">Communication barriers leave many children unheard—and families searching for answers.</p>
+        <h2 class="reveal" data-i18n="sectionProblemTitle">The Problem</h2>
+        <p class="problem-lead reveal reveal-delay-1" data-i18n="problemLead">Communication barriers leave many children unheard—and families searching for answers.</p>
 
         <div class="problem-layout">
             <div class="problem-stat reveal reveal-left reveal-delay-1">
                 <h3>30%</h3>
-                <p>Of autistic children don't develop functional spoken language</p>
+                <p data-i18n="problemStat">Of autistic children don't develop functional spoken language</p>
             </div>
             <div class="problem-content-wrap">
                 <div class="problem-visual reveal reveal-scale reveal-delay-2">
-                    <img src="media/autism%20block.png" alt="Colorful blocks spelling AUTISM" class="problem-blocks-img">
+                    <img src="media/autism%20block.png" alt="Colorful blocks spelling AUTISM" data-i18n-alt="altAutismBlocks" class="problem-blocks-img">
                 </div>
                 <div class="problem-details reveal reveal-right reveal-delay-2">
                     <ul class="problem-list">
-                        <li class="reveal reveal-delay-3">Difficulty expressing needs and emotions</li>
-                        <li class="reveal reveal-delay-4">Increased frustration and behavioral challenges</li>
-                        <li class="reveal reveal-delay-5">Social isolation and reduced independence</li>
+                        <li class="reveal reveal-delay-3" data-i18n="problemListItem1">Difficulty expressing needs and emotions</li>
+                        <li class="reveal reveal-delay-4" data-i18n="problemListItem2">Increased frustration and behavioral challenges</li>
+                        <li class="reveal reveal-delay-5" data-i18n="problemListItem3">Social isolation and reduced independence</li>
                     </ul>
                     <div class="highlight-text reveal reveal-delay-5">
-                        <p>Traditional Augmentative and Alternative Communication (AAC) systems are not effective for every child.</p>
+                        <p data-i18n="problemHighlight">Traditional Augmentative and Alternative Communication (AAC) systems are not effective for every child.</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
     <section id="about" class="section-animate">
-        <h2 class="reveal">About Us</h2>
+        <h2 class="reveal" data-i18n="sectionAboutTitle">About Us</h2>
         <div class="about-container">
             <div class="about-card reveal-item reveal-delay-1">
-                <h3>Our Mission</h3>
-                <p>To bridge the communication gap between non-verbal autistic children and their caregivers by providing a passive, real-time, brain-computer interface that translates thoughts into words during moments of greatest need.</p>
+                <h3 data-i18n="missionTitle">Our Mission</h3>
+                <p data-i18n="missionText">To bridge the communication gap between non-verbal autistic children and their caregivers by providing a passive, real-time, brain-computer interface that translates thoughts into words during moments of greatest need.</p>
             </div>
             <div class="about-card reveal-item reveal-delay-2">
-                <h3>Our Vision</h3>
-                <p>A world where every child, regardless of their ability to speak, has a voice that is heard, understood, and valued—empowering families, educators, and specialists with the tools to connect, support, and care without guesswork.</p>
+                <h3 data-i18n="visionTitle">Our Vision</h3>
+                <p data-i18n="visionText">A world where every child, regardless of their ability to speak, has a voice that is heard, understood, and valued—empowering families, educators, and specialists with the tools to connect, support, and care without guesswork.</p>
             </div>
         </div>
     </section>
     
     <section id="how-it-works" class="section-animate">
-        <h2 class="reveal">How It Works</h2>
-        <p class="how-intro reveal">Translating brain signals into clear communication in four simple steps.</p>
+        <h2 class="reveal" data-i18n="sectionHowTitle">How It Works</h2>
+        <p class="how-intro reveal" data-i18n="howIntro">Translating brain signals into clear communication in four simple steps.</p>
 
         <div class="how-flow">
             <div class="headset-showcase reveal reveal-delay-1">
@@ -121,8 +129,8 @@
                     <path class="wave wave-2" d="M0,35 Q25,55 50,35 T100,35 T150,35 T200,35" fill="none" stroke="currentColor" stroke-width="2"/>
                 </svg>
                 <div class="headset-glow"></div>
-                <img src="media/headset.png" alt="Emotiv Insight EEG headset" class="headset-img">
-                <span class="showcase-label">Emotiv Insight</span>
+                <img src="media/headset.png" alt="Emotiv Insight EEG headset" data-i18n-alt="altHeadset" class="headset-img">
+                <span class="showcase-label" data-i18n="headsetLabel">Emotiv Insight</span>
             </div>
 
             <div class="steps-timeline">
@@ -130,8 +138,8 @@
                     <div class="step-connector" aria-hidden="true"></div>
                     <div class="step-number">1</div>
                     <div class="step-body">
-                        <h4>Wear Headset</h4>
-                        <p>The child wears the integrated Emotiv EEG headset.</p>
+                        <h4 data-i18n="step1Title">Wear Headset</h4>
+                        <p data-i18n="step1Text">The child wears the integrated Emotiv EEG headset.</p>
                     </div>
                 </div>
 
@@ -139,8 +147,8 @@
                     <div class="step-connector" aria-hidden="true"></div>
                     <div class="step-number">2</div>
                     <div class="step-body">
-                        <h4>Capture Brainwaves</h4>
-                        <p>The system safely captures real-time brainwave activity.</p>
+                        <h4 data-i18n="step2Title">Capture Brainwaves</h4>
+                        <p data-i18n="step2Text">The system safely captures real-time brainwave activity.</p>
                     </div>
                 </div>
 
@@ -148,16 +156,16 @@
                     <div class="step-connector" aria-hidden="true"></div>
                     <div class="step-number">3</div>
                     <div class="step-body">
-                        <h4>Classify Command</h4>
-                        <p>The Emotiv API processes and classifies the mental command.</p>
+                        <h4 data-i18n="step3Title">Classify Command</h4>
+                        <p data-i18n="step3Text">The Emotiv API processes and classifies the mental command.</p>
                     </div>
                 </div>
 
                 <div class="step-card reveal reveal-delay-5">
                     <div class="step-number">4</div>
                     <div class="step-body">
-                        <h4>Map to Phrase</h4>
-                        <p>NEYRON instantly maps the command to a predefined phrase for clear communication.</p>
+                        <h4 data-i18n="step4Title">Map to Phrase</h4>
+                        <p data-i18n="step4Text">NEYRON instantly maps the command to a predefined phrase for clear communication.</p>
                     </div>
                 </div>
             </div>
@@ -166,83 +174,83 @@
 
     
     <section id="features" class="section-animate" style="background-color: var(--light-blue);">
-        <h2 class="reveal">Key Features</h2>
+        <h2 class="reveal" data-i18n="sectionFeaturesTitle">Key Features</h2>
         <div class="features-grid">
             <div class="feature-item reveal-item reveal-delay-1">
-                <h3>Brainwave Mapping</h3>
-                <p>Translates brain signals into structured, meaningful phrases, bridging the gap between nonverbal expression and clear communication.</p>
+                <h3 data-i18n="feature1Title">Brainwave Mapping</h3>
+                <p data-i18n="feature1Text">Translates brain signals into structured, meaningful phrases, bridging the gap between nonverbal expression and clear communication.</p>
             </div>
             <div class="feature-item reveal-item reveal-delay-2">
-                <h3>HAWER</h3>
-                <p>A speech-guided interface for conversational support and echolalia management.</p>
+                <h3 data-i18n="feature2Title">HAWER</h3>
+                <p data-i18n="feature2Text">A speech-guided interface for conversational support and echolalia management.</p>
             </div>
             <div class="feature-item reveal-item reveal-delay-3">
-                <h3>Arabic PECS Library</h3>
-                <p>A customizable, digitized library of PECS cards specifically tailored for Arabic users.</p>
+                <h3 data-i18n="feature3Title">Arabic PECS Library</h3>
+                <p data-i18n="feature3Text">A customizable, digitized library of PECS cards specifically tailored for Arabic users.</p>
             </div>
             <div class="feature-item reveal-item reveal-delay-4">
-                <h3>Emotiv Integration</h3>
-                <p>Seamlessly integrated with the Emotiv Insight headset to capture and classify commands.</p>
+                <h3 data-i18n="feature4Title">Emotiv Integration</h3>
+                <p data-i18n="feature4Text">Seamlessly integrated with the Emotiv Insight headset to capture and classify commands.</p>
             </div>
         </div>
     </section>
 
     <section id="app-showcase" class="section-animate">
         <div class="app-showcase-bg" aria-hidden="true"></div>
-        <h2 class="reveal">Inside the NEYRON App</h2>
-        <p class="showcase-intro reveal reveal-delay-1">An ASD-centered design crafted for children with Autism Spectrum Disorder and their caregivers.</p>
+        <h2 class="reveal" data-i18n="sectionAppTitle">Inside the NEYRON App</h2>
+        <p class="showcase-intro reveal reveal-delay-1" data-i18n="showcaseIntro">An ASD-centered design crafted for children with Autism Spectrum Disorder and their caregivers.</p>
 
         <div class="phone-carousel reveal reveal-delay-2" id="phone-carousel">
             <div class="phone-stack-shadow" aria-hidden="true"></div>
             <div class="phone-carousel-stage" id="phone-carousel-stage">
                 <article class="phone-slide" data-index="0">
                     <div class="app-screen">
-                        <img src="media/homescreen.png" alt="NEYRON Main Dashboard" draggable="false">
+                        <img src="media/homescreen.png" alt="NEYRON Main Dashboard" data-i18n-alt="altDashboard" draggable="false">
                     </div>
                 </article>
                 <article class="phone-slide" data-index="1">
                     <div class="app-screen">
-                        <img src="media/arabicpecs.png" alt="Arabic PECS Library" draggable="false">
+                        <img src="media/arabicpecs.png" alt="Arabic PECS Library" data-i18n-alt="altPecs" draggable="false">
                     </div>
                 </article>
                 <article class="phone-slide" data-index="2">
                     <div class="app-screen">
-                        <img src="media/history.png" alt="Command History Timeline" draggable="false">
+                        <img src="media/history.png" alt="Command History Timeline" data-i18n-alt="altHistory" draggable="false">
                     </div>
                 </article>
             </div>
             <div class="phone-caption-wrap">
-                <p class="phone-caption is-active" data-index="0">Intuitive User Dashboard</p>
-                <p class="phone-caption" data-index="1">Arabic PECS Library</p>
-                <p class="phone-caption" data-index="2">Real-Time Command History</p>
+                <p class="phone-caption is-active" data-index="0" data-i18n="captionDashboard">Intuitive User Dashboard</p>
+                <p class="phone-caption" data-index="1" data-i18n="captionPecs">Arabic PECS Library</p>
+                <p class="phone-caption" data-index="2" data-i18n="captionHistory">Real-Time Command History</p>
             </div>
-            <div class="carousel-dots" role="tablist" aria-label="App screens">
-                <button type="button" class="carousel-dot is-active" data-index="0" aria-label="Dashboard" aria-selected="true"></button>
-                <button type="button" class="carousel-dot" data-index="1" aria-label="Arabic PECS" aria-selected="false"></button>
-                <button type="button" class="carousel-dot" data-index="2" aria-label="History" aria-selected="false"></button>
+            <div class="carousel-dots" role="tablist" aria-label="App screens" data-i18n-aria="ariaAppScreens">
+                <button type="button" class="carousel-dot is-active" data-index="0" data-i18n-aria-label="ariaDashboard" aria-label="Dashboard" aria-selected="true"></button>
+                <button type="button" class="carousel-dot" data-index="1" data-i18n-aria-label="ariaPecs" aria-label="Arabic PECS" aria-selected="false"></button>
+                <button type="button" class="carousel-dot" data-index="2" data-i18n-aria-label="ariaHistory" aria-label="History" aria-selected="false"></button>
             </div>
-            <p class="carousel-hint">← Drag or swipe to browse app screens →</p>
+            <p class="carousel-hint" data-i18n="carouselHint">← Drag or swipe to browse app screens →</p>
         </div>
     </section>
 
     <section id="contact" class="section-animate" style="padding-bottom: 0;">
         <footer>
-            <h2 class="reveal">Get in Touch</h2>
-            <p class="reveal reveal-delay-1">Contact us: <strong>team.neyron@gmail.com</strong></p>
+            <h2 class="reveal" data-i18n="sectionContactTitle">Get in Touch</h2>
+            <p class="reveal reveal-delay-1"><span data-i18n="contactLine">Contact us: </span><strong data-i18n="contactEmail">team.neyron@gmail.com</strong></p>
             
             <div class="footer-team reveal reveal-delay-2">
-                <h4>The Team</h4>
+                <h4 data-i18n="teamTitle">The Team</h4 >
                 <ul class="team-list">
-                    <li class="reveal-item reveal-delay-3">Fatimah Alsaggaf</li>
-                    <li class="reveal-item reveal-delay-4">Hajar Habiburahman</li>
-                    <li class="reveal-item reveal-delay-5">Hams Assiri</li>
-                    <li class="reveal-item reveal-delay-5">Rawan Tallha</li>
-                    <li class="reveal-item reveal-delay-5">Rital Shilli</li>
+                    <li class="reveal-item reveal-delay-3" data-i18n="teamMember1">Fatimah Alsaggaf</li>
+                    <li class="reveal-item reveal-delay-4" data-i18n="teamMember2">Hajar Habiburahman</li>
+                    <li class="reveal-item reveal-delay-5" data-i18n="teamMember3">Hams Assiri</li>
+                    <li class="reveal-item reveal-delay-5" data-i18n="teamMember4">Rawan Tallha</li>
+                    <li class="reveal-item reveal-delay-5" data-i18n="teamMember5">Rital Shilli</li>
                 </ul>
-                <p><small>Supervised By: Dr. Wafa Almukadi</small></p>
-                <p class="reveal reveal-delay-3" style="margin-top: 30px; font-size: 0.8rem;">&copy; 2026 NEYRON Project. All rights reserved.</p>
+                <p><small data-i18n="supervised">Supervised By: Dr. Wafa Almukadi</small></p>
+                <p class="reveal reveal-delay-3" style="margin-top: 30px; font-size: 0.8rem;" data-i18n="copyright">&copy; 2026 NEYRON Project. All rights reserved.</p>
 
-                <img src="media/members.png" alt="Team" class="team-img" style="width: 100%; height: 100%; object-fit: contain;">
+                <img src="media/members.png" alt="Team" data-i18n-alt="altTeam" class="team-img" style="width: 100%; height: 100%; object-fit: contain;">
             </div>
         </footer>
     </section>
@@ -257,14 +265,14 @@
             header.classList.remove('nav-open');
             document.body.classList.remove('nav-menu-open');
             navToggle.setAttribute('aria-expanded', 'false');
-            navToggle.setAttribute('aria-label', 'Open menu');
+            navToggle.setAttribute('aria-label', translations[currentLang]?.menuOpen || 'Open menu');
         }
 
         navToggle.addEventListener('click', () => {
             const isOpen = header.classList.toggle('nav-open');
             document.body.classList.toggle('nav-menu-open', isOpen);
             navToggle.setAttribute('aria-expanded', isOpen);
-            navToggle.setAttribute('aria-label', isOpen ? 'Close menu' : 'Open menu');
+            navToggle.setAttribute('aria-label', isOpen ? translations[currentLang]?.menuClose || 'Close menu' : translations[currentLang]?.menuOpen || 'Open menu');
         });
 
         mainNav.querySelectorAll('a').forEach((link) => {
@@ -297,6 +305,221 @@
         document.querySelectorAll('.hero .reveal').forEach((el) => {
             requestAnimationFrame(() => el.classList.add('is-visible'));
         });
+
+        const langToggle = document.getElementById('lang-toggle');
+        const translationElements = document.querySelectorAll('[data-i18n]');
+        const altElements = document.querySelectorAll('[data-i18n-alt]');
+        const ariaElements = document.querySelectorAll('[data-i18n-aria]');
+        const ariaLabelElements = document.querySelectorAll('[data-i18n-aria-label]');
+
+        const translations = {
+            en: {
+                navHome: 'Home',
+                navProblem: 'The Problem',
+                navAbout: 'About',
+                navHowItWorks: 'How It Works',
+                navFeatures: 'Features',
+                navApp: 'App',
+                navContact: 'Contact',
+                heroBadge: 'Brain-Computer Interface',
+                heroTitleAccent: 'NEY',
+                heroTitleRest: 'RON',
+                heroTagline: 'Intelligent Autism Communication Aid via Brain-Computer Interface (BCI)',
+                btnHowItWorks: 'See How It Works',
+                btnGetInTouch: 'Get in Touch',
+                sectionProblemTitle: 'The Problem',
+                problemLead: 'Communication barriers leave many children unheard—and families searching for answers.',
+                problemStat: 'Of autistic children don\'t develop functional spoken language',
+                problemListItem1: 'Difficulty expressing needs and emotions',
+                problemListItem2: 'Increased frustration and behavioral challenges',
+                problemListItem3: 'Social isolation and reduced independence',
+                problemHighlight: 'Traditional Augmentative and Alternative Communication (AAC) systems are not effective for every child.',
+                sectionAboutTitle: 'About Us',
+                missionTitle: 'Our Mission',
+                missionText: 'To bridge the communication gap between non-verbal autistic children and their caregivers by providing a passive, real-time, brain-computer interface that translates thoughts into words during moments of greatest need.',
+                visionTitle: 'Our Vision',
+                visionText: 'A world where every child, regardless of their ability to speak, has a voice that is heard, understood, and valued—empowering families, educators, and specialists with the tools to connect, support, and care without guesswork.',
+                sectionHowTitle: 'How It Works',
+                howIntro: 'Translating brain signals into clear communication in four simple steps.',
+                headsetLabel: 'Emotiv Insight',
+                step1Title: 'Wear Headset',
+                step1Text: 'The child wears the integrated Emotiv EEG headset.',
+                step2Title: 'Capture Brainwaves',
+                step2Text: 'The system safely captures real-time brainwave activity.',
+                step3Title: 'Classify Command',
+                step3Text: 'The Emotiv API processes and classifies the mental command.',
+                step4Title: 'Map to Phrase',
+                step4Text: 'NEYRON instantly maps the command to a predefined phrase for clear communication.',
+                sectionFeaturesTitle: 'Key Features',
+                feature1Title: 'Brainwave Mapping',
+                feature1Text: 'Translates brain signals into structured, meaningful phrases, bridging the gap between nonverbal expression and clear communication.',
+                feature2Title: 'HAWER',
+                feature2Text: 'A speech-guided interface for conversational support and echolalia management.',
+                feature3Title: 'Arabic PECS Library',
+                feature3Text: 'A customizable, digitized library of PECS cards specifically tailored for Arabic users.',
+                feature4Title: 'Emotiv Integration',
+                feature4Text: 'Seamlessly integrated with the Emotiv Insight headset to capture and classify commands.',
+                sectionAppTitle: 'Inside the NEYRON App',
+                showcaseIntro: 'An ASD-centered design crafted for children with Autism Spectrum Disorder and their caregivers.',
+                captionDashboard: 'Intuitive User Dashboard',
+                captionPecs: 'Arabic PECS Library',
+                captionHistory: 'Real-Time Command History',
+                carouselHint: '← Drag or swipe to browse app screens →',
+                sectionContactTitle: 'Get in Touch',
+                contactLine: 'Contact us: ',
+                contactEmail: 'team.neyron@gmail.com',
+                teamTitle: 'The Team',
+                supervised: 'Supervised By: Dr. Wafa Almukadi',
+                copyright: '© 2026 NEYRON Project. All rights reserved.',
+                langToggle: 'العربية',
+                switchLanguage: 'Switch language to Arabic',
+                menuOpen: 'Open menu',
+                menuClose: 'Close menu',
+                altNeyronCharacters: 'Neyron Characters',
+                altAutismBlocks: 'Colorful blocks spelling AUTISM',
+                altHeadset: 'Emotiv Insight EEG headset',
+                altDashboard: 'NEYRON Main Dashboard',
+                altPecs: 'Arabic PECS Library',
+                altHistory: 'Command History Timeline',
+                altTeam: 'Team',
+                ariaAppScreens: 'App screens',
+                ariaDashboard: 'Dashboard',
+                ariaPecs: 'Arabic PECS',
+                ariaHistory: 'History',
+                teamMember1: 'Fatimah Alsaggaf',
+                teamMember2: 'Hajar Habiburahman',
+                teamMember3: 'Hams Assiri',
+                teamMember4: 'Rawan Tallha',
+                teamMember5: 'Rital Shilli'
+            },
+            ar: {
+                navHome: 'الرئيسية',
+                navProblem: 'المشكلة',
+                navAbout: 'من نحن',
+                navHowItWorks: 'كيف يعمل',
+                navFeatures: 'الميزات',
+                navApp: 'التطبيق',
+                navContact: 'تواصل معنا',
+                heroBadge: 'واجهة الدماغ والحاسوب',
+                heroTitleAccent: 'نيّرون',
+                heroTitleRest: '',
+                heroTagline: 'مساعد تواصل ذكي لذوي التوحد عبر واجهة الدماغ والحاسوب',
+                btnHowItWorks: 'كيف يعمل؟',
+                btnGetInTouch: 'تواصل معنا',
+                sectionProblemTitle: 'المشكلة',
+                problemLead: 'حواجز التواصل تجعل العديد من الأطفال غير مسموعين.',
+                problemStat: 'من الأطفال المصابين بالتوحد لا يطورون لغة منطوقة وظيفية',
+                problemListItem1: 'صعوبة في التعبير عن الاحتياجات والمشاعر',
+                problemListItem2: 'زيادة الإحباط والتحديات السلوكية',
+                problemListItem3: 'العزلة الاجتماعية وتقليل الاستقلالية',
+                problemHighlight: 'الأنظمة التقليدية للتواصل المعزز والبديل (AAC) ليست فعالة لكل طفل.',
+                sectionAboutTitle: 'من نحن',
+                missionTitle: 'مهمتنا',
+                missionText: 'سد فجوة التواصل بين الأطفال المصابين بالتوحد غير الناطقين ومقدمي الرعاية من خلال واجهة دماغ-حاسوب فورية تترجم الأفكار إلى كلمات عند الحاجة القصوى.',
+                visionTitle: 'رؤيتنا',
+                visionText: 'عالم يتمكن فيه كل طفل، بغض النظر عن قدرته على الكلام، من أن يكون له صوت مسموع ومفهوم ومُقدَّر, مع تمكين العائلات والمعلمين والأخصائيين بأدوات للاتصال والدعم والرعاية دون تخمين.',
+                sectionHowTitle: 'كيف يعمل؟',
+                howIntro: 'ترجمة إشارات الدماغ إلى تواصل واضح في أربع خطوات بسيطة.',
+                headsetLabel: 'Emotive Insight',
+                step1Title: 'ارتدِ السماعة',
+                step1Text: 'يرتدي الطفل سماعة EEG الخاصة بـ Emotiv.',
+                step2Title: 'التقاط موجات الدماغ',
+                step2Text: 'النظام يلتقط نشاط موجات الدماغ في الوقت الحقيقي بأمان.',
+                step3Title: 'تصنيف الأوامر',
+                step3Text: 'واجهة برمجة تطبيقات Emotiv تعالج وتُصنف الأوامر الذهنية.',
+                step4Title: 'الربط بالجمل',
+                step4Text: 'نيرون يربط الأوامر فوراً بعبارة محددة لتمكين تواصل واضح.',
+                sectionFeaturesTitle: 'الميزات الرئيسية',
+                feature1Title: 'ربط اشارات الدماغ بجمل',
+                feature1Text: 'يترجم إشارات الدماغ إلى عبارات منظمة وذات معنى، ويجسر الفجوة بين التعبير غير اللفظي والتواصل الواضح.',
+                feature2Title: 'حاور',
+                feature2Text: 'واجهة موجهة لدعم المحادثة وإدارة التكرار الكلامي (المصاداة). ',
+                feature3Title: 'مكتبة PECS بالعربية',
+                feature3Text: 'مكتبة قابلة للتخصيص ورقمية لبطاقات PECS مصممة خصيصاً للمستخدمين العرب.',
+                feature4Title: 'تكامل Emotiv',
+                feature4Text: 'تكامل سلس مع سماعة Emotiv Insight لالتقاط وتصنيف الأوامر.',
+                sectionAppTitle: 'داخل تطبيق نيّرون',
+                showcaseIntro: 'تصميم يركز على ذوي اضطراب طيف التوحد وأولياء أمورهم.',
+                captionDashboard: 'لوحة تحكم سهلة الاستخدام',
+                captionPecs: 'مكتبة PECS بالعربية',
+                captionHistory: 'سجل الأوامر المباشر',
+                carouselHint: '← اسحب أو مرر لتصفح شاشات التطبيق →',
+                sectionContactTitle: 'تواصل معنا',
+                contactLine: 'تواصل معنا: ',
+                contactEmail: 'team.neyron@gmail.com',
+                teamTitle: 'الفريق',
+                supervised: 'إشراف: د. وفاء المكادي',
+                copyright: '© 2026 مشروع نيّرون. جميع الحقوق محفوظة.',
+                langToggle: 'English',
+                switchLanguage: 'التبديل إلى اللغة الإنجليزية',
+                menuOpen: 'افتح القائمة',
+                menuClose: 'أغلق القائمة',
+                altNeyronCharacters: 'شخصيات نيّرون',
+                altAutismBlocks: 'كتل ملونة تهجّي AUTISM',
+                altHeadset: 'سماعة Emotiv Insight EEG',
+                altDashboard: 'لوحة التحكم الرئيسية في نيّرون',
+                altPecs: 'مكتبة PECS بالعربية',
+                altHistory: 'مخطط سجل الأوامر',
+                altTeam: 'الفريق',
+                ariaAppScreens: 'شاشات التطبيق',
+                ariaDashboard: 'لوحة التحكم',
+                ariaPecs: 'PECS بالعربية',
+                ariaHistory: 'التاريخ',
+                teamMember1: 'فاطمة السقاف',
+                teamMember2: 'هاجر حبيب الرحمن',
+                teamMember3: 'همس عسيري',
+                teamMember4: 'روان طلحه',
+                teamMember5: 'ريتال شلّي'
+            }
+        };
+
+        let currentLang = localStorage.getItem('neyronLang') || 'en';
+        if (!['en', 'ar'].includes(currentLang)) currentLang = 'en';
+
+        function updateLanguage(lang) {
+            const map = translations[lang];
+            document.documentElement.lang = lang;
+            document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
+            document.body.classList.toggle('rtl', lang === 'ar');
+
+            translationElements.forEach((el) => {
+                const key = el.dataset.i18n;
+                if (key && map[key] !== undefined) el.textContent = map[key];
+            });
+
+            altElements.forEach((el) => {
+                const key = el.dataset.i18nAlt;
+                if (key && map[key] !== undefined) el.alt = map[key];
+            });
+
+            ariaElements.forEach((el) => {
+                const key = el.dataset.i18nAria;
+                if (key && map[key] !== undefined) el.setAttribute('aria-label', map[key]);
+            });
+
+            ariaLabelElements.forEach((el) => {
+                const key = el.dataset.i18nAriaLabel;
+                if (key && map[key] !== undefined) el.setAttribute('aria-label', map[key]);
+            });
+
+            langToggle.textContent = map.langToggle;
+            langToggle.setAttribute('aria-label', map.switchLanguage);
+
+            if (navToggle.getAttribute('aria-expanded') === 'true') {
+                navToggle.setAttribute('aria-label', map.menuClose);
+            } else {
+                navToggle.setAttribute('aria-label', map.menuOpen);
+            }
+
+            currentLang = lang;
+            localStorage.setItem('neyronLang', lang);
+        }
+
+        langToggle.addEventListener('click', () => {
+            updateLanguage(currentLang === 'en' ? 'ar' : 'en');
+        });
+
+        updateLanguage(currentLang);
 
         (function initPhoneCarousel() {
             const carousel = document.getElementById('phone-carousel');
